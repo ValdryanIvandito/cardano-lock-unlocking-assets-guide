@@ -6,7 +6,7 @@ This is documentation that gives you a step-by-step guide on how to generate con
 
 ## Step-1 Build Plutus Script / UPLC
 
-First, you must build or compile the validator script into Plutus Script or UPLC. The following is the [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides){:target="\_blank"}
+First, you must build or compile the validator script into Plutus Script or UPLC. The following is the [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides){:target="_blank"}
 
 There are PlutusTx and Aiken Validator Scripts; you can choose one of them. After you build or compile the script, then go to the output directory.
 
@@ -72,4 +72,5 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 # References
 
 [Gimbalabs PPBL Module 102.2: Build an Address](https://plutuspbl.io/modules/102/1022)
+
 [Cardano Academy](https://academy.cardanofoundation.org/)
