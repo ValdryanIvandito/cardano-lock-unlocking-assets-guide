@@ -42,7 +42,7 @@ cardano-cli address build \
 --$network
 ```
 
-**_Note: In this example, we use always-succeeds.plutus in accordance with this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides). However, the script file name can be anything._**
+**_Note: In this example, we use 'always-succeeds.plutus' script in accordance with this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides). However, the script file name can be anything._**
 
 ### Display The Address
 
