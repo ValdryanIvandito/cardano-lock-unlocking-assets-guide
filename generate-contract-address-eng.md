@@ -8,7 +8,7 @@ This is documentation that gives you a step-by-step guide on how to generate con
 
 First, you must build or compile the Validator Script into Plutus Script or UPLC. The following is the [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides). There are PlutusTx and Aiken Validator Scripts; you can choose one of them. After you build or compile the script, then go to the output directory.
 
-## Step-2 Initiate Blockchain Network
+## Step-2 Initiate Cardano Network
 
 ```bash
 network="testnet-magic 1"
@@ -42,7 +42,7 @@ cardano-cli address build \
 --$network
 ```
 
-**_Note: Use the payment-script-file to generate a contract address. In this example, we use always-succeeds.plutus in accordance with this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides). However, the script file name can be anything._**
+**_Note: In this example, we use always-succeeds.plutus in accordance with this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides). However, the script file name can be anything._**
 
 ### Display The Address
 
