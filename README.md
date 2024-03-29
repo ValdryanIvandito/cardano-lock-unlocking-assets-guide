@@ -1,1 +1,1 @@
-This is documentation that gives you a step-by-step guide on how to compile a smart contract / validator script into UPLC.
+This documentation provides a step-by-step guide on how to generate a contract address, lock some assets to the contract address, and then unlock assets from the contract address.
