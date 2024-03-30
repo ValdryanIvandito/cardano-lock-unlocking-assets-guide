@@ -44,7 +44,10 @@ lockAmount="AMOUNT IN LOVELACE"
 datumValue="1618"
 ```
 
-**Note:** 1₳ = 1,000,000 Lovelace
+**_Notes:_**
+**_ - A UTxO at a Contract Address must include Datum_**
+**_ - In this example, we'll simply use an inlide datum value_**
+**_ - The Datum Value can be any number_**
 
 ## Step-5 Build Transaction From the Wallet Address (Sender)
 
@@ -77,6 +80,16 @@ cardano-cli transaction submit \
 --tx-file lock-always-succeeds.signed \
 ```
 
+**Result:** Transaction successfully submitted
+
+### Display Information About the Contract UTxO
+
+```bash
+cardano-cli query utxo \
+--address $contractAddress \
+--$network
+```
+
 # Demo
 
 The following is a video recorded by the Indonesian Cardano Developers Community where I demonstrated the steps above. Watch the recorded video at timestamp **_1:27:27_**, here is the [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ)
@@ -86,3 +99,7 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 [Gimbalabs PPBL Module 102.4: Lock Tokens at a Contract Address](https://plutuspbl.io/modules/102/1024)
 
 [Cardano Academy](https://academy.cardanofoundation.org/)
+
+```
+
+```
