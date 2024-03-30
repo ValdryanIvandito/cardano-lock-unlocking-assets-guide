@@ -1,6 +1,6 @@
 # Introduction
 
-This is documentation that provides you with a step-by-step guide on how to lock assets to a Contract Address. First, we need the _Contract Address_ and _the Wallet Address_. The goal of this practical session in this documentation is to send an amount of ADA from the Wallet Address to the Contract Address, and then lock the assets.
+This is documentation that provides you with a step-by-step guide on how to lock assets to a Contract Address. First, we need the **Contract Address** and **the Wallet Address**. The goal of this practical session in this documentation is to send an amount of ADA from the Wallet Address to the Contract Address, and then lock the assets.
 
 # Step by step
 
@@ -44,7 +44,7 @@ lockAmount="AMOUNT IN LOVELACE"
 datumValue="1618"
 ```
 
-**_Notes: A UTxO at a Contract Address must include Datum. In this example, we'll simply use an inlide datum value. The Datum Value can be any number_**
+**_Notes: A UTxO at a Contract Address must include Datum. In this example, we'll simply use an inlide datum value. The Datum Value can be any number._**
 
 ## Step-5 Build Transaction From the Wallet Address (Sender)
 
