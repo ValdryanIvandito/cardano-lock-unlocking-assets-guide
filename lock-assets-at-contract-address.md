@@ -44,7 +44,7 @@ lockAmount="AMOUNT IN LOVELACE"
 datumValue="1618"
 ```
 
-**_Notes: A UTxO at a Contract Address must include Datum. In this example, we'll simply use an inlide datum value. The Datum Value can be any number._**
+**_Notes: A UTxO at a Contract Address must include Datum. In this example, we'll simply use an inlide datum value. The Datum Value can be any number because we use the 'always-succeeds.plutus' contract, which is the output always true._**
 
 ## Step-5 Build Transaction From the Wallet Address (Sender)
 
@@ -96,6 +96,8 @@ cardano-cli query utxo \
 --------------------------------------------------------------------------------------
 07b7300894f2b175d322ea24e18b2a210ef8d8141d22ce6ce9f37efb108d5544     0        500000000 lovelace + TxOutDatumInline ReferenceTxInsScriptsInlineDatumsInBabbageEra (ScriptDataNumber 1618)
 ```
+
+**_Notes: Look at the UTxO; there is a TxOutDatumInline which has ScriptDataNumber 1618, in accordance with the datum value provided during the transaction._**
 
 # Demo
 
