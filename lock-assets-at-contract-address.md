@@ -59,6 +59,8 @@ cardano-cli transaction build \
 --out-file lock-always-succeeds.raw
 ```
 
+**_Estimated transaction fee: Lovelace 167349_**
+
 ## Step-6 Sign Transaction From the Wallet Address (Sender)
 
 ```bash
@@ -77,7 +79,7 @@ cardano-cli transaction submit \
 --tx-file lock-always-succeeds.signed \
 ```
 
-**Result:** Transaction successfully submitted
+**_Result: Transaction successfully submitted_**
 
 ### Display Information About the Contract UTxO
 
@@ -85,6 +87,14 @@ cardano-cli transaction submit \
 cardano-cli query utxo \
 --address $contractAddress \
 --$network
+```
+
+**Example Result:**
+
+```bash
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+07b7300894f2b175d322ea24e18b2a210ef8d8141d22ce6ce9f37efb108d5544     0        500000000 lovelace + TxOutDatumInline ReferenceTxInsScriptsInlineDatumsInBabbageEra (ScriptDataNumber 1618)
 ```
 
 # Demo
@@ -96,7 +106,3 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 [Gimbalabs PPBL Module 102.4: Lock Tokens at a Contract Address](https://plutuspbl.io/modules/102/1024)
 
 [Cardano Academy](https://academy.cardanofoundation.org/)
-
-```
-
-```
