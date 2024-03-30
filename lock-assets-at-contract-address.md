@@ -44,10 +44,7 @@ lockAmount="AMOUNT IN LOVELACE"
 datumValue="1618"
 ```
 
-**_Notes:_**
-**_ - A UTxO at a Contract Address must include Datum_**
-**_ - In this example, we'll simply use an inlide datum value_**
-**_ - The Datum Value can be any number_**
+**_Notes: A UTxO at a Contract Address must include Datum. In this example, we'll simply use an inlide datum value. The Datum Value can be any number_**
 
 ## Step-5 Build Transaction From the Wallet Address (Sender)
 
