@@ -1,62 +1,81 @@
 # Introduction
 
-This is documentation that gives you a step-by-step guide on how to compile a PlutusTx script into UPLC. If you successfully compile the script, you will find a file with a **_.plutus_** extension, which is a UPLC. This UPLC has a CBOR format that can be used on-chain.
-
-When installing the Plutus environment on our local machine, it can require significant effort. However, there is an alternative. We can use [demeter.run](https://demeter.run/), which provides Cardano infrastructures, tools, libraries, and, of course, the Plutus environment.
+This is documentation that provides you with a step-by-step guide on how to lock assets to a Contract Address. First, we need the _Contract Address_ and _the Wallet Address_. The goal of this practical session in this documentation is to send an amount of ADA from the Wallet Address to the Contract Address, and then lock the assets.
 
 # Step by step
 
-## Setup Demeter
+## Step-1 Generate Contract Address
 
-1. Use demeter.run, if you haven’t an account then create new account
-2. Add resource and select workspace
-3. In the toolchain section, select PlutusTx
-4. Select a large workspace size
-5. Select a network. In this example, we'll use Preprod
-6. Run the workspace and wait a moment. After provisioning is complete, then open the VSCode feature in the browser
+If you haven't generated a Contract Address, then refer to the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/generate-contract-address-eng.md).
 
-## Open a Bash Terminal in the VSCode
+## Step-2 Generate Wallet Address (Sender)
 
-1. Clone Gimbalabs PPBL2023 Plutus Template
+If you haven't generated a Wallet Address, then refer to the previous [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md).
 
-   ```bash
-   git clone https://gitlab.com/gimbalabs/ppbl-2023/ppbl2023-plutus-template.git
-   ```
+## Step-3 Initiate the Input: Wallet Address (Sender), Transaction Hash (TxHash), Transaction Index (TxIx)
 
-2. Go to PPBL2023 Plutus Template Directory
+### Display Information About the Wallet UTxO
 
-   ```bash
-   cd ppbl2023-plutus-template
-   ```
+```bash
+cardano-cli query utxo \
+--address $myAddress \
+--$network
+```
 
-3. Create an Output Directory Where This is The Place For .plutus Files
+**Example Result:**
 
-   ```bash
-   mkdir output
-   ```
+```bash
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
+```
 
-4. Run Cabal
+### Initiate TxHash and TxIx
 
-   ```bash
-   cabal update
-   cabal repl
-   ```
+```bash
+utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
+```
 
-5. In the repl, run:
+## Step-4 Initiate the Output: Contract Address, Amount to Lock, and Datum Value
 
-   ```repl
-   writeAlwaysSucceedsScript
-   ```
+```bash
+contractAddress="COPY THE CONTRACT ADDRESS HERE"
+lockAmount="AMOUNT IN LOVELACE"
+datumValue="1618"
+```
 
-## Result
+**Note:** 1₳ = 1,000,000 Lovelace
 
-If you successfully execute the writeAlwaysSucceedsScript, the result will be shown as right() in the terminal, and in the output directory, you'll find a file named always-succeeds.plutus, as shown in the image below:
+## Step-5 Build Transaction From the Wallet Address (Sender)
 
-![right-result](public/right-result.png)
+```bash
+cardano-cli transaction build \
+--babbage-era \
+--$network \
+--tx-in $utxo \
+--tx-out $contractAddress+$lockAmount \
+--tx-out-inline-datum-value $datumValue \
+--change-address $myAddress \
+--out-file lock-always-succeeds.raw
+```
 
-![always-succeeds.plutus](public/plutustx-script-compiled.png)
+## Step-6 Sign Transaction From the Wallet Address (Sender)
 
-Then congratulations! You've successfully compiled the PlutusTx validator script into UPLC
+```bash
+cardano-cli transaction sign \
+--$network \
+--tx-body-file lock-always-succeeds.raw \
+--signing-key-file payment.skey \
+--out-file lock-always-succeeds.signed
+```
+
+## Step-7 Submit Transaction From the Wallet Address (Sender)
+
+```bash
+cardano-cli transaction submit \
+--$network \
+--tx-file lock-always-succeeds.signed \
+```
 
 # Demo
 
@@ -64,20 +83,6 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 
 # References
 
-[Cardano Developers Portal: Plutus](https://developers.cardano.org/docs/smart-contracts/plutus/)
-
-[Plutus Core and PlutusTx User Guide](https://plutus.readthedocs.io/en/latest/explanations/platform.html)
-
-[The Plutus Compilation Pipeline: Understanding Plutus Core](https://well-typed.com/blog/2022/08/plutus-cores/)
-
-[CBOR Documentation](https://cbor.io/)
-
-[Gimbalabs PPBL Module 101: Plutus Terminology](https://plutuspbl.io/modules/101/slts)
-
-[Gimbalabs PPBL Module 101.1: Introducing UPLC](https://plutuspbl.io/modules/101/1011)
-
-[Gimbalabs PPBL Module 101.2: The Role of UPLC](https://plutuspbl.io/modules/101/1012)
-
-[Gimbalabs PPBL Module 101.3: Compiling PlutusTx](https://plutuspbl.io/modules/101/1013)
+[Gimbalabs PPBL Module 102.4: Lock Tokens at a Contract Address](https://plutuspbl.io/modules/102/1024)
 
 [Cardano Academy](https://academy.cardanofoundation.org/)
