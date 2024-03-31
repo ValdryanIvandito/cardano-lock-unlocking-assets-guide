@@ -1,6 +1,6 @@
 # Introduction
 
-This is documentation that gives you a step-by-step guide on how to generate contract address.
+This is documentation that provides you a step-by-step guide on how to generate contract address.
 
 # Step by step
 

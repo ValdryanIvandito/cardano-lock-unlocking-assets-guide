@@ -1,16 +1,16 @@
 # Introduction
 
-This is documentation that provides you with a step-by-step guide on how to lock assets to a Contract Address. First, we need the **Contract Address** and **the Wallet Address**. The goal of this practical session in this documentation is to send an amount of ADA from the Wallet Address to the Contract Address, and then lock the assets.
+This is documentation that provides you with a step-by-step guide on how to lock assets to a Contract Address. First, You need the **Contract Address** and **the Wallet Address**. The goal of this practical session in this documentation is to send an amount of ADA from the Wallet Address to the Contract Address, and then lock the assets.
 
 # Step by step
 
 ## Step-1 Generate Contract Address
 
-If you haven't generated a Contract Address, then refer to the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/generate-contract-address-eng.md).
+If you haven't generated a Contract Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/generate-contract-address-eng.md).
 
 ## Step-2 Generate Wallet Address (Sender)
 
-If you haven't generated a Wallet Address, then refer to the previous [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md).
+If you haven't generated a Wallet Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md).
 
 ## Step-3 Initiate the Input: Wallet Address (Sender), Transaction Hash (TxHash), Transaction Index (TxIx)
 
@@ -44,7 +44,7 @@ lockAmount="AMOUNT IN LOVELACE"
 datumValue="1618"
 ```
 
-**_Notes: A UTxO at a Contract Address must include Datum. In this example, we'll simply use an inlide datum value. The Datum Value can be any number because we use the 'always-succeeds.plutus' contract, which is the output always true._**
+**_Notes: A UTxO at a Contract Address must include Datum. In this example, we'll simply use an inline datum value. The Datum Value can be any number because we use the 'always-succeeds.plutus' contract, which is the output always true._**
 
 ## Step-5 Build Transaction From the Wallet Address (Sender)
 
