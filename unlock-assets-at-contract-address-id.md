@@ -1,16 +1,14 @@
-# Introduction
+# Pendahuluan
 
-This is documentation that provides you with a step-by-step guide on how to unlock assets from a Contract Address. First, you must lock some assets from a Wallet Address to the Contract Address. The goal of this practical session in this documentation is to unlock an amount of ADA from the Contract Address and then send it back to the Wallet Address.
+Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara mengambil aset yang terkunci di Alamat Kontrak. Dokumentasi ini adalah lanjutan dari [dokumentasi](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/lock-assets-at-contract-address-id.md) sebelumnya, yaitu mengunci aset di Alamat Kontrak. Tujuan dari percobaan di dokumentasi ini adalah mengirim kembali sejumlah ADA dari Alamat Kontrak yang terkunci ke Alamat Dompet.
 
-# Step by step
+# Langkah-Langkah
 
-## Step-1 Lock Assets to The Contract Address
+## Step-1 Inisiasi Parameter Input: UTxO Kontrak, UTxO Kolateral, File Plutus Skrip, dan Nilai Redeemer
 
-If you haven't lock assets to the Contract Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/lock-assets-at-contract-address-eng.md).
+**_Petunjuk: Asumsi Anda sudah memiliki Alamat Kontrak dan Alamat Dompet_**
 
-## Step-2 Initiate the Input: Wallet Address (Sender), Contract-UTxO, Collateral-UTxO, Plutus-Script-File, Redeemer-Value
-
-### Display Information About the Contract UTxO
+### 1. Menampilkan Informasi UTxO Alamat Kontrak
 
 ```bash
 cardano-cli query utxo \
@@ -18,21 +16,13 @@ cardano-cli query utxo \
 --$network
 ```
 
-**Example Result:**
-
-```bash
-                           TxHash                                 TxIx        Amount
---------------------------------------------------------------------------------------
-07b7300894f2b175d322ea24e18b2a210ef8d8141d22ce6ce9f37efb108d5544     0        500000000 lovelace + TxOutDatumInline ReferenceTxInsScriptsInlineDatumsInBabbageEra (ScriptDataNumber 1618)
-```
-
-### Initiate TxHash and TxIx From Contract UTxO
+### 2. Inisiasi TxHash dan TxIx dari UTxO Alamat Kontrak
 
 ```bash
 contractUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-### Display Information About the Wallet UTxO
+### 3. Menampilkan Informasi UTxO Alamat Dompet
 
 ```bash
 cardano-cli query utxo \
@@ -40,45 +30,37 @@ cardano-cli query utxo \
 --$network
 ```
 
-**Example Result:**
-
-```bash
-                           TxHash                                 TxIx        Amount
---------------------------------------------------------------------------------------
-62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
-```
-
-### Initiate TxHash and TxIx From Wallet UTxO for Collateral
+### 4. Inisiasi TxHash dan TxIx dari UTxO Alamat Dompet untuk Kolateral
 
 ```bash
 collateralUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-### Initiate Plutus-Script-File Path
+### 5. Inisiasi File Path Skrip Plutus
 
-**_note: In this example, Plutus-Script-File generated at demeter.run workspace_**
+**_Petunjuk: Dalam contoh ini, Skrip Plutus dibuat di workspace demeter.run_**
 
-If you use Plutus-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-aiken-script-eng.md), the file path is:
+Jika Anda menggunakan Skrip PlutusTx di [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-plutustx-script-id.md) ini, gunakan:
 
 ```bash
 plutusScript=/config/workspace/repo/ppbl2023-plutus-template/output/always-succeeds.plutus
 ```
 
-If you use Aiken-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-plutustx-script-eng.md), the file path is:
+Jika Anda menggunakan Skrip Aiken di [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-aiken-script-id.md) ini, gunakan:
 
 ```bash
 plutusScript="/config/workspace/repo/aiken-template/output/always-succeeds.plutus"
 ```
 
-### Initiate Redeemer-Value
+### 6. Inisiasi Nilai Redeemer
 
 ```bash
 redeemerValue="1618"
 ```
 
-**_Notes: The Datum Value can be any number because we use the 'always-succeeds.plutus' contract, which is the output always true._**
+**_Catatan: Nilai Redeemer bisa berapa saja karena kita menggunakan kontrak 'always-succeeds.plutus', yang outputnya selalu bernilai true._**
 
-## Step-3 Build Protocol JSON File
+## Langkah-2 Membuat File Protocol JSON
 
 ```bash
 cardano-cli query protocol-parameters \
@@ -86,7 +68,7 @@ cardano-cli query protocol-parameters \
 --out-file protocol.json
 ```
 
-## Step-4 Build Transaction From the Wallet Address (Sender)
+## Langkah-3 Membuat Transaksi dari Alamat Dompet (Pengirim)
 
 ```bash
 cardano-cli transaction build \
@@ -102,9 +84,7 @@ cardano-cli transaction build \
 --out-file unlock-always-succeeds.raw
 ```
 
-**_Estimated transaction fee: Lovelace 173729_**
-
-## Step-5 Sign Transaction From the Wallet Address (Sender)
+## Langkah-4 Menandatangani Transaksi dari Alamat Dompet (Pengirim)
 
 ```bash
 cardano-cli transaction sign \
@@ -114,7 +94,7 @@ cardano-cli transaction sign \
 --out-file unlock-always-succeeds.signed
 ```
 
-## Step-6 Submit Transaction From the Wallet Address (Sender)
+## Langkah-5 Mengirim Transaksi dari Alamat Dompet (Pengirim)
 
 ```bash
 cardano-cli transaction submit \
@@ -122,9 +102,7 @@ cardano-cli transaction submit \
 --tx-file unlock-always-succeeds.signed \
 ```
 
-**_Result: Transaction successfully submitted_**
-
-**_Note: You can track the transaction using a blockchain explorer, such as Cardano Explorer or CardanoScan. Copy the link below._**
+**_Catatan: Anda dapat melacak transaksi menggunakan penjelajah blockchain, seperti Cardano Explorer atau CardanoScan. Salin tautan di bawah ini._**
 
 Preprod:
 
@@ -146,9 +124,9 @@ https://cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
 
 # Demo
 
-The following is a video recorded by the Indonesian Cardano Developers Community where I demonstrated the steps above. Watch the recorded video at timestamp **_1:27:27_**, here is the [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ)
+Berikut adalah video yang direkam oleh Komunitas Developer Cardano Indonesia di mana saya menjelaskan langkah-langkah di atas. Tonton video yang direkam pada timestamp **_1:27:27_** di [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ) berikut ini.
 
-# References
+# Referensi
 
 [Gimbalabs PPBL Module 102.5: Unlock Tokens From a Contract Address](https://plutuspbl.io/modules/102/1025)
 
