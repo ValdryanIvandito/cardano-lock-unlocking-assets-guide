@@ -4,7 +4,7 @@ Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara mengamb
 
 # Langkah-Langkah
 
-## Step-1 Inisiasi Parameter Input: UTxO Kontrak, UTxO Kolateral, File Plutus Skrip, dan Nilai Redeemer
+## Langkah-1 Inisiasi Parameter Input: UTxO Kontrak, UTxO Kolateral, File Plutus Skrip, dan Nilai Redeemer
 
 **_Petunjuk: Asumsi Anda sudah memiliki Alamat Kontrak dan Alamat Dompet_**
 
