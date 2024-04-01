@@ -27,7 +27,9 @@ cardano-cli query utxo \
 ```bash
                            TxHash                                 TxIx        Amount
 --------------------------------------------------------------------------------------
-62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
+115cf952602bbce99822e113ae6de94235c24683072ebe18ff50320bab25f256     1        499832651 lovelace + TxOutDatumNone
+9353e6bcea1ce528820a105494c1d8b19e9f2d332be4923b562eebefd4fa6f2f     0        1000000000 lovelace + TxOutDatumNone
+f890172d74900e52377c58e82a8b1b62886f9dd9909023c6169b77f46e9af118     0        1000000000 lovelace + TxOutDatumNone
 ```
 
 ### Initiate TxHash and TxIx

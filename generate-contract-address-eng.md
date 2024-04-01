@@ -61,7 +61,7 @@ addr_test1wzxwjsv8ktwprjjnvx23xqp68qk282ks604hm37k75kekgqsl59k0
 
 ```bash
 cardano-cli query utxo \
---address $myAddress \
+--address $contractAddress \
 --$network
 ```
 
