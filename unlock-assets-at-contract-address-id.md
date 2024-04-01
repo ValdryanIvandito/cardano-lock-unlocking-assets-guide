@@ -43,7 +43,7 @@ collateralUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 Jika Anda menggunakan Skrip PlutusTx di [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-plutustx-script-id.md) ini, gunakan:
 
 ```bash
-plutusScript=/config/workspace/repo/ppbl2023-plutus-template/output/always-succeeds.plutus
+plutusScript="/config/workspace/repo/ppbl2023-plutus-template/output/always-succeeds.plutus"
 ```
 
 Jika Anda menggunakan Skrip Aiken di [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-aiken-script-id.md) ini, gunakan:
