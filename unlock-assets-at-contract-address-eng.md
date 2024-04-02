@@ -1,16 +1,14 @@
 # Introduction
 
-This is documentation that provides you with a step-by-step guide on how to unlock assets from a Contract Address. First, you must lock some assets from a Wallet Address to the Contract Address. The goal of this practical session in this documentation is to unlock an amount of ADA from the Contract Address and then send it back to the Wallet Address.
+This is documentation that provides you with a step-by-step guide on how to unlock assets from a Contract Address. This documentation is a continuation of the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/lock-assets-at-contract-address-eng.md), which is about locking assets at the Contract Address. The goal of this practical session in this documentation is to unlock an amount of ADA from the Contract Address and then send it back to the Wallet Address.
 
 # Step by step
 
-## Step-1 Lock Assets to The Contract Address
+## Step-1 Initiate the Input: Contract-UTxO, Collateral-UTxO, Plutus-Script-File, and Redeemer-Value
 
-If you haven't lock assets to the Contract Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/lock-assets-at-contract-address-eng.md).
+**_Hint: Assuming you already have a Contract Address and Wallet Address_**
 
-## Step-2 Initiate the Input: Wallet Address (Sender), Contract-UTxO, Collateral-UTxO, Plutus-Script-File, Redeemer-Value
-
-### Display Information About the Contract UTxO
+### 1. Display Information About the Contract UTxO
 
 ```bash
 cardano-cli query utxo \
@@ -18,21 +16,13 @@ cardano-cli query utxo \
 --$network
 ```
 
-**Example Result:**
-
-```bash
-                           TxHash                                 TxIx        Amount
---------------------------------------------------------------------------------------
-07b7300894f2b175d322ea24e18b2a210ef8d8141d22ce6ce9f37efb108d5544     0        500000000 lovelace + TxOutDatumInline ReferenceTxInsScriptsInlineDatumsInBabbageEra (ScriptDataNumber 1618)
-```
-
-### Initiate TxHash and TxIx From Contract UTxO
+### 2. Initiate TxHash and TxIx From Contract UTxO
 
 ```bash
 contractUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-### Display Information About the Wallet UTxO
+### 3. Display Information About the Wallet UTxO
 
 ```bash
 cardano-cli query utxo \
@@ -40,45 +30,37 @@ cardano-cli query utxo \
 --$network
 ```
 
-**Example Result:**
-
-```bash
-                           TxHash                                 TxIx        Amount
---------------------------------------------------------------------------------------
-62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
-```
-
-### Initiate TxHash and TxIx From Wallet UTxO for Collateral
+### 4. Initiate TxHash and TxIx From Wallet UTxO for Collateral
 
 ```bash
 collateralUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-### Initiate Plutus-Script-File Path
+### 5. Initiate Plutus-Script-File Path
 
-**_note: In this example, Plutus-Script-File generated at demeter.run workspace_**
+**_Hint: In this example, Plutus-Script-File generated at demeter.run workspace_**
 
-If you use Plutus-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-aiken-script-eng.md), the file path is:
+If you use Plutus-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-plutustx-script-eng.md), the file path is:
 
 ```bash
 plutusScript=/config/workspace/repo/ppbl2023-plutus-template/output/always-succeeds.plutus
 ```
 
-If you use Aiken-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-plutustx-script-eng.md), the file path is:
+If you use Aiken-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-aiken-script-eng.md), the file path is:
 
 ```bash
 plutusScript="/config/workspace/repo/aiken-template/output/always-succeeds.plutus"
 ```
 
-### Initiate Redeemer-Value
+### 6. Initiate Redeemer-Value
 
 ```bash
 redeemerValue="1618"
 ```
 
-**_Notes: The Datum Value can be any number because we use the 'always-succeeds.plutus' contract, which is the output always true._**
+**_Notes: The Redeemer Value can be any number because we use the 'always-succeeds.plutus' contract, which is the output always true._**
 
-## Step-3 Build Protocol JSON File
+## Step-2 Build Protocol JSON File
 
 ```bash
 cardano-cli query protocol-parameters \
@@ -86,7 +68,7 @@ cardano-cli query protocol-parameters \
 --out-file protocol.json
 ```
 
-## Step-4 Build Transaction From the Wallet Address (Sender)
+## Step-3 Build Transaction From the Wallet Address (Sender)
 
 ```bash
 cardano-cli transaction build \
@@ -102,9 +84,7 @@ cardano-cli transaction build \
 --out-file unlock-always-succeeds.raw
 ```
 
-**_Estimated transaction fee: Lovelace 173729_**
-
-## Step-5 Sign Transaction From the Wallet Address (Sender)
+## Step-4 Sign Transaction From the Wallet Address (Sender)
 
 ```bash
 cardano-cli transaction sign \
@@ -114,7 +94,7 @@ cardano-cli transaction sign \
 --out-file unlock-always-succeeds.signed
 ```
 
-## Step-6 Submit Transaction From the Wallet Address (Sender)
+## Step-5 Submit Transaction From the Wallet Address (Sender)
 
 ```bash
 cardano-cli transaction submit \
@@ -122,9 +102,7 @@ cardano-cli transaction submit \
 --tx-file unlock-always-succeeds.signed \
 ```
 
-**_Result: Transaction successfully submitted_**
-
-**_Note: You can track the transaction using a blockchain explorer, such as Cardano Explorer or CardanoScan. Copy the link below._**
+**_Hint: You can track the transaction using a blockchain explorer, such as Cardano Explorer or CardanoScan. Copy the link below._**
 
 Preprod:
 

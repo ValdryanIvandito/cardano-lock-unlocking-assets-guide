@@ -102,7 +102,7 @@ cardano-cli transaction submit \
 --tx-file unlock-always-succeeds.signed \
 ```
 
-**_Catatan: Anda dapat melacak transaksi menggunakan penjelajah blockchain, seperti Cardano Explorer atau CardanoScan. Salin tautan di bawah ini._**
+**_Petunjuk: Anda dapat melacak transaksi menggunakan penjelajah blockchain, seperti Cardano Explorer atau CardanoScan. Salin tautan di bawah ini._**
 
 Preprod:
 
