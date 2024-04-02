@@ -43,7 +43,7 @@ collateralUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 If you use Plutus-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-plutustx-script-eng.md), the file path is:
 
 ```bash
-plutusScript=/config/workspace/repo/ppbl2023-plutus-template/output/always-succeeds.plutus
+plutusScript="/config/workspace/repo/ppbl2023-plutus-template/output/always-succeeds.plutus"
 ```
 
 If you use Aiken-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-aiken-script-eng.md), the file path is:
