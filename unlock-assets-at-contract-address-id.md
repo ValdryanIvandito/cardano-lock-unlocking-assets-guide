@@ -8,7 +8,7 @@ Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara mengamb
 
 **_Petunjuk: Asumsi Anda sudah memiliki Alamat Kontrak dan Alamat Dompet_**
 
-### 1. Menampilkan Informasi UTxO Alamat Kontrak
+### Menampilkan Informasi UTxO Alamat Kontrak
 
 ```bash
 cardano-cli query utxo \
@@ -16,13 +16,13 @@ cardano-cli query utxo \
 --$network
 ```
 
-### 2. Inisiasi TxHash dan TxIx dari UTxO Alamat Kontrak
+### Inisiasi TxHash dan TxIx dari UTxO Alamat Kontrak
 
 ```bash
 contractUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-### 3. Menampilkan Informasi UTxO Alamat Dompet
+### Menampilkan Informasi UTxO Alamat Dompet
 
 ```bash
 cardano-cli query utxo \
@@ -30,13 +30,13 @@ cardano-cli query utxo \
 --$network
 ```
 
-### 4. Inisiasi TxHash dan TxIx dari UTxO Alamat Dompet untuk Kolateral
+### Inisiasi TxHash dan TxIx dari UTxO Alamat Dompet untuk Kolateral
 
 ```bash
 collateralUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-### 5. Inisiasi File Path Skrip Plutus
+### Inisiasi File Path Skrip Plutus
 
 **_Petunjuk: Dalam contoh ini, Skrip Plutus dibuat di workspace demeter.run_**
 
@@ -52,7 +52,7 @@ Jika Anda menggunakan Skrip Aiken di [dokumentasi](https://github.com/ValdryanIv
 plutusScript="/config/workspace/repo/aiken-template/output/always-succeeds.plutus"
 ```
 
-### 6. Inisiasi Nilai Redeemer
+### Inisiasi Nilai Redeemer
 
 ```bash
 redeemerValue="1618"

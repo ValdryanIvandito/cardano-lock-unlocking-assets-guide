@@ -12,7 +12,9 @@ Jika Anda belum memiliki Alamat Kontrak, ikuti langkah-langkah di [dokumentasi](
 
 Jika Anda belum memiliki Alamat Dompet, ikuti langkah-langkah di [dokumentasi](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) berikut ini.
 
-## Langkah-3 Inisiasi Parameter Input: Alamat Dompet (Pengirim), Hash Transaksi (TxHash), Indeks Transaksi (TxIx)
+## Langkah-3 Inisiasi Parameter Input: Hash Transaksi (TxHash) dan Indeks Transaksi (TxIx) dari Alamat Dompet (Pengirim)
+
+**_Petunjuk: Asumsi Anda sudah memiliki Alamat Dompet_**
 
 ### Menampilkan Informasi UTxO di Alamat Dompet
 
@@ -22,24 +24,17 @@ cardano-cli query utxo \
 --$network
 ```
 
-**Contoh Hasil:**
-
-```bash
-                           TxHash                                 TxIx        Amount
---------------------------------------------------------------------------------------
-62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
-```
-
 ### Inisiasi TxHash dan TxIx
 
 ```bash
 utxo="COPY TX-HASH DISINI#COPY TX-IX DISINI"
 ```
 
-## Langkah-4 Inisiasi Parameter Output: Alamat Kontrak, Jumlah ADA yang Akan Dikunci, Nilai Datum
+## Langkah-4 Inisiasi Parameter Output: Jumlah ADA yang Akan Dikunci, Nilai Datum, dan Alamat Kontrak
+
+**_Petunjuk: Asumsi Anda sudah memiliki Alamat Kontrak_**
 
 ```bash
-contractAddress="COPY ALAMAT KONTRAK DISINI"
 lockAmount="JUMLAH DALAM LOVELACE"
 datumValue="1618"
 ```
@@ -59,8 +54,6 @@ cardano-cli transaction build \
 --out-file lock-always-succeeds.raw
 ```
 
-**_Estimasi Fee Transaksi: Lovelace 167349_**
-
 ## Langkah-6 Menandatangani Transaksi Dari Alamat Dompet (Pengirim)
 
 ```bash
@@ -78,8 +71,6 @@ cardano-cli transaction submit \
 --$network \
 --tx-file lock-always-succeeds.signed \
 ```
-
-**_Hasil: Transaction successfully submitted_**
 
 ### Menampilkan Informasi UTxO di Alamat Kontrak
 

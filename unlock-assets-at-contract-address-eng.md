@@ -8,7 +8,7 @@ This is documentation that provides you with a step-by-step guide on how to unlo
 
 **_Hint: Assuming you already have a Contract Address and Wallet Address_**
 
-### 1. Display Information About the Contract UTxO
+### Display Information About the Contract Address UTxO
 
 ```bash
 cardano-cli query utxo \
@@ -16,13 +16,13 @@ cardano-cli query utxo \
 --$network
 ```
 
-### 2. Initiate TxHash and TxIx From Contract UTxO
+### Initiate TxHash and TxIx From Contract Address UTxO
 
 ```bash
 contractUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-### 3. Display Information About the Wallet UTxO
+### Display Information About the Wallet Address UTxO
 
 ```bash
 cardano-cli query utxo \
@@ -30,13 +30,13 @@ cardano-cli query utxo \
 --$network
 ```
 
-### 4. Initiate TxHash and TxIx From Wallet UTxO for Collateral
+### Initiate TxHash and TxIx From Wallet Address UTxO for Collateral
 
 ```bash
 collateralUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-### 5. Initiate Plutus-Script-File Path
+### Initiate Plutus-Script-File Path
 
 **_Hint: In this example, Plutus-Script-File generated at demeter.run workspace_**
 
@@ -52,7 +52,7 @@ If you use Aiken-Script in this [documentation](https://github.com/ValdryanIvand
 plutusScript="/config/workspace/repo/aiken-template/output/always-succeeds.plutus"
 ```
 
-### 6. Initiate Redeemer-Value
+### Initiate Redeemer-Value
 
 ```bash
 redeemerValue="1618"

@@ -44,20 +44,14 @@ cardano-cli address build \
 
 **_Note: In this example, we use 'always-succeeds.plutus' script in accordance with this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides). However, the script file name can be anything._**
 
-### Display The Address
+### Display The Contract Address
 
 ```bash
 contractAddress=$(cat contract.addr)
 echo $contractAddress
 ```
 
-**Example Address:**
-
-```bash
-addr_test1wzxwjsv8ktwprjjnvx23xqp68qk282ks604hm37k75kekgqsl59k0
-```
-
-### Display Information About the UTxO (Check Balance)
+### Display Information About the Contract Address UTxO (Check Balance)
 
 ```bash
 cardano-cli query utxo \

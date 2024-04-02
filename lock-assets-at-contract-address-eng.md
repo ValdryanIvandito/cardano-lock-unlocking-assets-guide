@@ -12,24 +12,16 @@ If you haven't generated a Contract Address, follow the previous [documentation]
 
 If you haven't generated a Wallet Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md).
 
-## Step-3 Initiate the Input: Wallet Address (Sender), Transaction Hash (TxHash), Transaction Index (TxIx)
+## Step-3 Initiate the Input: Transaction Hash (TxHash) and Transaction Index (TxIx) from Wallet Address (Sender)
 
-### Display Information About the Wallet UTxO
+**_Hint: Assuming you already Wallet Address_**
+
+### Display Information About the Wallet Address UTxO
 
 ```bash
 cardano-cli query utxo \
 --address $myAddress \
 --$network
-```
-
-**Example Result:**
-
-```bash
-                           TxHash                                 TxIx        Amount
---------------------------------------------------------------------------------------
-115cf952602bbce99822e113ae6de94235c24683072ebe18ff50320bab25f256     1        499832651 lovelace + TxOutDatumNone
-9353e6bcea1ce528820a105494c1d8b19e9f2d332be4923b562eebefd4fa6f2f     0        1000000000 lovelace + TxOutDatumNone
-f890172d74900e52377c58e82a8b1b62886f9dd9909023c6169b77f46e9af118     0        1000000000 lovelace + TxOutDatumNone
 ```
 
 ### Initiate TxHash and TxIx
@@ -38,10 +30,11 @@ f890172d74900e52377c58e82a8b1b62886f9dd9909023c6169b77f46e9af118     0        10
 utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ```
 
-## Step-4 Initiate the Output: Contract Address, Amount to Lock, and Datum Value
+## Step-4 Initiate the Output: Amount to Lock, Datum Value, and Contract Address
+
+**_Hint: Assuming you already Contract Address_**
 
 ```bash
-contractAddress="COPY THE CONTRACT ADDRESS HERE"
 lockAmount="AMOUNT IN LOVELACE"
 datumValue="1618"
 ```
@@ -61,8 +54,6 @@ cardano-cli transaction build \
 --out-file lock-always-succeeds.raw
 ```
 
-**_Estimated transaction fee: Lovelace 167349_**
-
 ## Step-6 Sign Transaction From the Wallet Address (Sender)
 
 ```bash
@@ -81,9 +72,7 @@ cardano-cli transaction submit \
 --tx-file lock-always-succeeds.signed \
 ```
 
-**_Result: Transaction successfully submitted_**
-
-### Display Information About the Contract UTxO
+### Display Information About the Contract Address UTxO
 
 ```bash
 cardano-cli query utxo \
