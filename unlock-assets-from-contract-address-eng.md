@@ -1,6 +1,6 @@
 # Introduction
 
-This is documentation that provides you with a step-by-step guide on how to unlock assets from a Contract Address. This documentation is a continuation of the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/lock-assets-at-contract-address-eng.md), which is about locking assets at the Contract Address. The goal of this practical session in this documentation is to unlock an amount of ADA from the Contract Address and then send it back to the Wallet Address.
+This is documentation that provides you with a step-by-step guide on how to unlock assets from a Contract Address. This documentation is a continuation of the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guide/blob/main/lock-assets-at-contract-address-eng.md), which is about locking assets at the Contract Address. The goal of this practical session in this documentation is to unlock an amount of ADA from the Contract Address and then send it back to the Wallet Address.
 
 # Step by step
 
@@ -40,13 +40,13 @@ collateralUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 
 **_Hint: In this example, Plutus-Script-File generated at demeter.run workspace_**
 
-If you use Plutus-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-plutustx-script-eng.md), the file path is:
+If you use Plutus-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guide/blob/main/compiling-plutustx-script-eng.md), the file path is:
 
 ```bash
 plutusScript="/config/workspace/repo/ppbl2023-plutus-template/output/always-succeeds.plutus"
 ```
 
-If you use Aiken-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-aiken-script-eng.md), the file path is:
+If you use Aiken-Script in this [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guide/blob/main/compiling-aiken-script-eng.md), the file path is:
 
 ```bash
 plutusScript="/config/workspace/repo/aiken-template/output/always-succeeds.plutus"
@@ -131,5 +131,3 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 [Gimbalabs PPBL Module 102.5: Unlock Tokens From a Contract Address](https://plutuspbl.io/modules/102/1025)
 
 [Cardano Docs: Collateral Mechanism](https://docs.cardano.org/smart-contracts/plutus/collateral-mechanism/)
-
-[Cardano Academy](https://academy.cardanofoundation.org/)

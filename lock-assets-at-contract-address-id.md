@@ -6,11 +6,11 @@ Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara mengunc
 
 ## Langkah-1 Membuat Alamat Kontrak
 
-Jika Anda belum memiliki Alamat Kontrak, ikuti langkah-langkah di [dokumentasi](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/generate-contract-address-id.md) berikut ini.
+Jika Anda belum memiliki Alamat Kontrak, ikuti langkah-langkah di [dokumentasi](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guide/blob/main/generate-contract-address-id.md) berikut ini.
 
 ## Langkah-2 Membuat Alamat Dompet (Pengirim)
 
-Jika Anda belum memiliki Alamat Dompet, ikuti langkah-langkah di [dokumentasi](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) berikut ini.
+Jika Anda belum memiliki Alamat Dompet, ikuti langkah-langkah di [dokumentasi](https://github.com/ValdryanIvandito/cardano-basic-transaction-guide/blob/main/generate-wallet-address-id.md) berikut ini.
 
 ## Langkah-3 Inisiasi Parameter Input: Hash Transaksi (TxHash) dan Indeks Transaksi (TxIx) dari Alamat Dompet (Pengirim)
 
@@ -96,6 +96,4 @@ Berikut adalah video yang direkam oleh Komunitas Developer Cardano Indonesia di 
 
 # Referensi
 
-[Gimbalabs PPBL Module 102.4: Lock Tokens at a Contract Address](https://plutuspbl.io/modules/102/1024)
-
-[Cardano Academy](https://academy.cardanofoundation.org/)
+[Gimbalabs PPBL2023 Module 102.4: Lock Tokens at a Contract Address](https://plutuspbl.io/modules/102/1024)

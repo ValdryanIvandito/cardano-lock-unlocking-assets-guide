@@ -1,6 +1,6 @@
 # Pendahuluan
 
-Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara mengambil aset yang terkunci di Alamat Kontrak. Dokumentasi ini adalah lanjutan dari [dokumentasi](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/lock-assets-at-contract-address-id.md) sebelumnya, yaitu mengunci aset di Alamat Kontrak. Tujuan dari percobaan di dokumentasi ini adalah mengirim kembali sejumlah ADA dari Alamat Kontrak yang terkunci ke Alamat Dompet.
+Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara mengambil aset yang terkunci di Alamat Kontrak. Dokumentasi ini adalah lanjutan dari [dokumentasi](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guide/blob/main/lock-assets-at-contract-address-id.md) sebelumnya, yaitu mengunci aset di Alamat Kontrak. Tujuan dari percobaan di dokumentasi ini adalah mengirim kembali sejumlah ADA dari Alamat Kontrak yang terkunci ke Alamat Dompet.
 
 # Langkah-Langkah
 
@@ -19,7 +19,7 @@ cardano-cli query utxo \
 ### Inisiasi TxHash dan TxIx dari UTxO Alamat Kontrak
 
 ```bash
-contractUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
+contractUtxo="COPY TX-HASH DISINI#COPY TX-IX DISINI"
 ```
 
 ### Menampilkan Informasi UTxO Alamat Dompet
@@ -33,20 +33,20 @@ cardano-cli query utxo \
 ### Inisiasi TxHash dan TxIx dari UTxO Alamat Dompet untuk Kolateral
 
 ```bash
-collateralUtxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
+collateralUtxo="COPY TX-HASH DISINI#COPY TX-IX DISINI"
 ```
 
 ### Inisiasi File Path Skrip Plutus
 
 **_Petunjuk: Dalam contoh ini, Skrip Plutus dibuat di workspace demeter.run_**
 
-Jika Anda menggunakan Skrip PlutusTx di [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-plutustx-script-id.md) ini, gunakan:
+Jika Anda menggunakan Skrip PlutusTx di [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guide/blob/main/compiling-plutustx-script-id.md) ini, gunakan:
 
 ```bash
 plutusScript="/config/workspace/repo/ppbl2023-plutus-template/output/always-succeeds.plutus"
 ```
 
-Jika Anda menggunakan Skrip Aiken di [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guides/blob/main/compiling-aiken-script-id.md) ini, gunakan:
+Jika Anda menggunakan Skrip Aiken di [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guide/blob/main/compiling-aiken-script-id.md) ini, gunakan:
 
 ```bash
 plutusScript="/config/workspace/repo/aiken-template/output/always-succeeds.plutus"
@@ -131,5 +131,3 @@ Berikut adalah video yang direkam oleh Komunitas Developer Cardano Indonesia di 
 [Gimbalabs PPBL Module 102.5: Unlock Tokens From a Contract Address](https://plutuspbl.io/modules/102/1025)
 
 [Cardano Docs: Collateral Mechanism](https://docs.cardano.org/smart-contracts/plutus/collateral-mechanism/)
-
-[Cardano Academy](https://academy.cardanofoundation.org/)

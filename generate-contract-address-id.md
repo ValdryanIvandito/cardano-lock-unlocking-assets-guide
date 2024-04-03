@@ -6,7 +6,7 @@ Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara menghas
 
 ## Langkah-1 Kompilasi Skrip Plutus / UPLC
 
-Pertama-tama Anda harus mengkompilasi Skrip Validator menjadi Plutus Skrip atau UPLC. Ikuti [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guides) berikut ini. Terdapat Skrip Validator PlutusTX dan Aiken; pilih salah satu. Setelah Anda mengkompilasi Skrip Validator, kemudian pergi ke direktori output.
+Pertama-tama Anda harus mengkompilasi Skrip Validator menjadi Plutus Skrip atau UPLC. Ikuti [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guide) berikut ini. Terdapat Skrip Validator PlutusTX dan Aiken; pilih salah satu. Setelah Anda mengkompilasi Skrip Validator, kemudian pergi ke direktori output.
 
 ## Langkah-2 Inisiasi Jaringan Cardano
 
@@ -42,7 +42,7 @@ cardano-cli address build \
 --$network
 ```
 
-**_Catatan: Dalam contoh ini, kita menggunakan Skrip 'always-succeeds.plutus' berdasarkan [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guides) berikut. Namun nama file skrip bisa apa saja._**
+**_Catatan: Dalam contoh ini, kita menggunakan Skrip 'always-succeeds.plutus' berdasarkan [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guide) berikut. Namun nama file skrip bisa apa saja._**
 
 ### Menampilkan Alamat Kontrak
 
@@ -65,6 +65,4 @@ Berikut adalah video yang direkam oleh Komunitas Developer Cardano Indonesia di 
 
 # Referensi
 
-[Gimbalabs PPBL Module 102.2: Build an Address](https://plutuspbl.io/modules/102/1022)
-
-[Cardano Academy](https://academy.cardanofoundation.org/)
+[Gimbalabs PPBL2023 Module 102.2: Build an Address](https://plutuspbl.io/modules/102/1022)

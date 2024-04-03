@@ -6,11 +6,11 @@ This is documentation that provides you with a step-by-step guide on how to lock
 
 ## Step-1 Generate Contract Address
 
-If you haven't generated a Contract Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guides/blob/main/generate-contract-address-eng.md).
+If you haven't generated a Contract Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-lock-unlocking-assets-guide/blob/main/generate-contract-address-eng.md).
 
 ## Step-2 Generate Wallet Address (Sender)
 
-If you haven't generated a Wallet Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md).
+If you haven't generated a Wallet Address, follow the previous [documentation](https://github.com/ValdryanIvandito/cardano-basic-transaction-guide/blob/main/generate-wallet-address-eng.md).
 
 ## Step-3 Initiate the Input: Transaction Hash (TxHash) and Transaction Index (TxIx) from Wallet Address (Sender)
 
@@ -96,6 +96,4 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 
 # References
 
-[Gimbalabs PPBL Module 102.4: Lock Tokens at a Contract Address](https://plutuspbl.io/modules/102/1024)
-
-[Cardano Academy](https://academy.cardanofoundation.org/)
+[Gimbalabs PPBL2023 Module 102.4: Lock Tokens at a Contract Address](https://plutuspbl.io/modules/102/1024)
