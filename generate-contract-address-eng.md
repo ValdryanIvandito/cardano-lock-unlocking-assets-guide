@@ -8,7 +8,9 @@ This is documentation that provides you a step-by-step guide on how to generate 
 
 First, you must build or compile the Validator Script into Plutus Script or UPLC. The following is the [documentation](https://github.com/ValdryanIvandito/cardano-script-compiling-guide). There are PlutusTx and Aiken Validator Scripts; you can choose one of them. After you build or compile the script, then go to the output directory.
 
-## Step-2 Initiate Cardano Network
+## Step-2 Initiate Cardano Network (Optional)
+
+**_Hint: If you have choosen the network, you can skip this step_**
 
 ```bash
 network="testnet-magic 1"

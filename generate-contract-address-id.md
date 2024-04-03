@@ -8,7 +8,9 @@ Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara menghas
 
 Pertama-tama Anda harus mengkompilasi Skrip Validator menjadi Plutus Skrip atau UPLC. Ikuti [dokumentasi](https://github.com/ValdryanIvandito/cardano-script-compiling-guide) berikut ini. Terdapat Skrip Validator PlutusTX dan Aiken; pilih salah satu. Setelah Anda mengkompilasi Skrip Validator, kemudian pergi ke direktori output.
 
-## Langkah-2 Inisiasi Jaringan Cardano
+## Langkah-2 Inisiasi Jaringan Cardano (Opsional)
+
+**_Petunjuk: Jika Anda sudah memilih jaringan, Anda dapat melewati langkah ini_**
 
 ```bash
 network="testnet-magic 1"
