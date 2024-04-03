@@ -1,6 +1,6 @@
 # Pendahuluan
 
-Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara menghasilkan alamat kontrak.
+Ini adalah dokumentasi yang memberikan panduan langkah demi langkah cara membuat Alamat Kontrak.
 
 # Langkah-langkah
 
