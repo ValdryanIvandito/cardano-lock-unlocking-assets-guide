@@ -107,19 +107,19 @@ cardano-cli transaction submit \
 Preprod:
 
 ```bash
-https://preprod.cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://preprod.cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 Preview:
 
 ```bash
-https://preview.cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://preview.cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 Mainnet:
 
 ```bash
-https://cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 # Demo
