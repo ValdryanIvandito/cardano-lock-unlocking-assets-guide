@@ -128,6 +128,6 @@ Berikut adalah video yang direkam oleh Komunitas Developer Cardano Indonesia di 
 
 # Referensi
 
-[Gimbalabs PPBL Module 102.5: Unlock Tokens From a Contract Address](https://plutuspbl.io/modules/102/1025)
+[Gimbalabs PPBL Module 102.5: Unlock Tokens from a Contract Address](https://plutuspbl.io/modules/102/1025)
 
 [Cardano Docs: Collateral Mechanism](https://docs.cardano.org/smart-contracts/plutus/collateral-mechanism/)
